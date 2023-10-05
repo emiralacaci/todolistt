@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/taskFragment">
+
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.example.todolistnew.ui.TaskPage.TaskFragment"
+        android:label="fragment_task"
+        tools:layout="@layout/fragment_task" >
+        <action
+            android:id="@+id/action_taskFragment_to_createNewTaskFragment"
+            app:destination="@id/createNewTaskFragment" />
+        <action
+            android:id="@+id/action_taskFragment_to_taskletFragment"
+            app:destination="@id/taskletFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/taskletFragment"
+        android:name="com.example.todolistnew.ui.TaskletPage.TaskletFragment"
+        android:label="fragment_tasklet"
+        tools:layout="@layout/fragment_tasklet" >
+
+        <action
+            android:id="@+id/action_taskletFragment_to_taskFragment"
+            app:destination="@id/taskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNewTaskFragment"
+        android:name="com.example.todolistnew.ui.CreateNewTaskPage.CreateNewTaskFragment"
+        android:label="fragment_create_new_task"
+        tools:layout="@layout/fragment_create_new_task" >
+        <action
+            android:id="@+id/action_createNewTaskFragment_to_taskFragment"
+            app:destination="@id/taskFragment" />
+    </fragment>
+</navigation>
